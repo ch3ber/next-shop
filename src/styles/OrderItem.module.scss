@@ -1,0 +1,42 @@
+@import 'vars';
+
+.OrderItem {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 16px;
+  margin-bottom: 24px;
+  align-items: center;
+}
+.OrderItem-image {
+  position: relative;
+}
+.OrderItem-image span {
+  width: 16px;
+  height: 16px;
+  background-color: $hospital-green;
+  border-radius: 50%;
+  font-size: $sm;
+  font-weight: bold;
+  position: absolute;
+  top: -6px;
+  right: -3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.OrderItem-image figure {
+  margin: 0;
+}
+.OrderItem-image-item {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.OrderItem p:nth-child(2) {
+  color: $very-light-pink;
+}
+.OrderItem p:nth-child(3) {
+  font-size: $md;
+  font-weight: bold;
+}
