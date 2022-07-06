@@ -6,16 +6,14 @@ import { useState } from 'react'
 
 const initialState = {
   cart: [],
-  countProducts: {}
+  countProducts: {},
 }
 
 export const useInitialState = () => {
   const [state, setState] = useState(initialState)
 
   const addToCart = (payload) => {
-    const isProductInCart = state.cart.some(
-      (item) => item.title === payload.title
-    )
+    const isProductInCart = state.cart.some((item) => item.title === payload.title)
 
     if (isProductInCart) {
       const countProduct = state.countProducts[payload.title]
@@ -23,8 +21,8 @@ export const useInitialState = () => {
         ...state,
         countProducts: {
           ...state.countProducts,
-          [payload.title]: countProduct + 1
-        }
+          [payload.title]: countProduct + 1,
+        },
       })
     }
 
@@ -33,9 +31,9 @@ export const useInitialState = () => {
         ...state,
         countProducts: {
           ...state.countProducts,
-          [payload.title]: 1
+          [payload.title]: 1,
         },
-        cart: [...state.cart, payload]
+        cart: [...state.cart, payload],
       })
     }
   }
@@ -49,8 +47,8 @@ export const useInitialState = () => {
         cart: state.cart.filter((item) => item.id !== payload.id),
         countProducts: {
           ...state.countProducts,
-          [payload.title]: 0
-        }
+          [payload.title]: 0,
+        },
       })
     }
 
@@ -59,14 +57,14 @@ export const useInitialState = () => {
         ...state,
         countProducts: {
           ...state.countProducts,
-          [payload.title]: countProduct - 1
-        }
+          [payload.title]: countProduct - 1,
+        },
       })
     }
   }
 
   const getCountProduct = (product) => {
-    return state.countProducts[product.title]
+    return state.countProducts[product?.title]
   }
 
   const getAllCountProducts = () => {
@@ -83,6 +81,6 @@ export const useInitialState = () => {
     addToCart,
     removeFromCart,
     getCountProduct,
-    getAllCountProducts
+    getAllCountProducts,
   }
 }
