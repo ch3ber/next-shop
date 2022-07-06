@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'react-shop/bundle.[hash].js',
-    publicPath: './'
+    publicPath: './',
   },
   mode: 'development',
   resolve: {
@@ -18,8 +18,8 @@ module.exports = {
       '@hooks': path.resolve(__dirname, 'src/hooks/'),
       '@styles': path.resolve(__dirname, 'src/styles/'),
       '@icons': path.resolve(__dirname, 'src/assets/icons/'),
-      '@logos': path.resolve(__dirname, 'src/assets/logos/')
-    }
+      '@logos': path.resolve(__dirname, 'src/assets/logos/'),
+    },
   },
   module: {
     rules: [
@@ -27,32 +27,32 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.(css|scss)$/i,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'public/[name].[hash][ext]'
-        }
-      }
-    ]
+          filename: 'public/[name].[hash][ext]',
+        },
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      filename: './index.html'
+      filename: './index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css'
-    })
+      filename: '[name].[contenthash].css',
+    }),
   ],
   devServer: {
-    historyApiFallback: true
-  }
+    historyApiFallback: true,
+  },
 }

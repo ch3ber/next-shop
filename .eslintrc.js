@@ -4,12 +4,23 @@ module.exports = {
     browser: true,
     amd: true,
     node: true,
-    es6: true,
+    es2021: true,
   },
-  extends: ['eslint:recommended', 'plugin:jsx-a11y/recommended', 'next', 'next/core-web-vitals'],
-  rules: {
-    semi: ['error', 'never', { beforeStatementContinuationChars: 'never' }],
-    quotes: ['error', 'single'],
-    'jsx-quotes': ['error', 'prefer-single'],
+  extends: [
+    'plugin:react/recommended',
+    'plugin:jsx-a11y/recommended',
+    'standard',
+    'plugin:prettier/recommended',
+    'next',
+    'next/core-web-vitals',
+  ],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
+  plugins: ['react'],
+  rules: {},
 }
