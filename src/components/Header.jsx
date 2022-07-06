@@ -23,28 +23,28 @@ export const Header = () => {
 
   return (
     <nav className={styles.Nav}>
-      <Image src={menu} alt='menu' className={styles.menu} />
+      <Image priority src={menu} alt="menu" className={styles.menu} />
       <div className={styles['navbar-left']}>
-        <Image src={logo} alt='logo' className={styles['nav-logo']} />
+        <Image priority src={logo} alt="logo" className={styles['nav-logo']} />
 
         <ul>
           <li>
-            <a href='/'>All</a>
+            <a href="/">All</a>
           </li>
           <li>
-            <a href='/'>Clothes</a>
+            <a href="/">Clothes</a>
           </li>
           <li>
-            <a href='/'>Electronics</a>
+            <a href="/">Electronics</a>
           </li>
           <li>
-            <a href='/'>Furnitures</a>
+            <a href="/">Furnitures</a>
           </li>
           <li>
-            <a href='/'>Toys</a>
+            <a href="/">Toys</a>
           </li>
           <li>
-            <a href='/'>Others</a>
+            <a href="/">Others</a>
           </li>
         </ul>
       </div>
@@ -54,8 +54,10 @@ export const Header = () => {
           <li className={styles['navbar-email']} onClick={handleToggle}>
             platzi@example.com
           </li>
-          <li className={styles['navbar-shopping-cart']} onClick={() => setToggleOrders(!toggleOrders)}>
-            <Image src={shoppingCart} alt='shopping cart' />
+          <li
+            className={styles['navbar-shopping-cart']}
+            onClick={() => setToggleOrders(!toggleOrders)}>
+            <Image src={shoppingCart} alt="shopping cart" />
             {getAllCountProducts() > 0 && <div>{getAllCountProducts()}</div>}
           </li>
         </ul>

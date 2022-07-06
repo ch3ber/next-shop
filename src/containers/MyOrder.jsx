@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 // components
 import { OrderItem } from '@components/OrderItem'
@@ -25,7 +26,7 @@ export const MyOrder = () => {
   return (
     <aside className={styles.MyOrder}>
       <div className={styles['title-container']}>
-        <Image src={arrow} alt='arrow' />
+        <Image src={arrow} alt="arrow" />
         <p className={styles.title}>My order</p>
       </div>
       <div className={styles['my-order-content']}>
@@ -38,7 +39,10 @@ export const MyOrder = () => {
           </p>
           <p>{sumTotal()}</p>
         </div>
-        <button className={styles['primary-button']}>Checkout</button>
+
+        <Link href="/checkout" className={styles['primary-button']}>
+          Checkout
+        </Link>
       </div>
     </aside>
   )

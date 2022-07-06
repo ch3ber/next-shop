@@ -9,8 +9,8 @@ const ProductInfo = () => {
   return (
     <>
       <Image
-        src='https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
-        alt='bike'
+        src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+        alt="bike"
       />
       <div className={styles.ProductInfo}>
         <p>$35,00</p>
@@ -23,7 +23,7 @@ const ProductInfo = () => {
           your hall or workspace.
         </p>
         <button className={(styles['primary-button'], styles['add-to-cart-button'])}>
-          <Image src={btnAddToCart} alt='add to cart' layout='fill' />
+          <Image src={btnAddToCart} alt="add to cart" />
           Add to cart
         </button>
       </div>

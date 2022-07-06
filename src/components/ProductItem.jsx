@@ -20,11 +20,10 @@ export const ProductItem = ({ product }) => {
       <Image
         src={product.images[0]}
         alt={product.title}
-        loader={() => product.images[0]}
         width={100}
         height={100}
-        layout='responsive'
-        loading='lazy'
+        layout="responsive"
+        loading="lazy"
       />
       <div className={styles['product-info']}>
         <div>
@@ -32,7 +31,7 @@ export const ProductItem = ({ product }) => {
           <p>{product.title}</p>
         </div>
         <figure onClick={() => handleClick(product)}>
-          <Image src={buttonImage} alt='shopping cart' />
+          <Image src={buttonImage} alt="shopping cart" />
         </figure>
       </div>
     </div>

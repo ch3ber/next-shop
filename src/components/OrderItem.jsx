@@ -16,20 +16,18 @@ export const OrderItem = ({ product }) => {
       <div className={styles['OrderItem-image']}>
         <figure>
           <Image
-            className={styles['OrderItem-image-item']}
-            loader={() => product.images[0]}
-            src={product.images[0]}
-            alt={product.title}
+            src={product?.images[0]}
+            alt={product?.title}
             width={70}
             height={70}
-            layout='responsive'
+            className={styles['OrderItem-image-item']}
           />
         </figure>
-        <span>{getCountProduct(product)}</span>
+        <span className={styles.countItem}>{getCountProduct(product)}</span>
       </div>
-      <p>{product.title}</p>
-      <p>${product.price}</p>
-      <Image src={closeIcon} alt='close' onClick={() => removeFromCart(product)} />
+      <p>{product?.title}</p>
+      <p>${product?.price}</p>
+      <Image src={closeIcon} alt="close" onClick={() => removeFromCart(product)} />
     </div>
   )
 }
