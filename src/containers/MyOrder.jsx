@@ -40,8 +40,8 @@ export const MyOrder = () => {
           <p>{sumTotal()}</p>
         </div>
 
-        <Link href="/checkout" className={styles['primary-button']}>
-          Checkout
+        <Link href="/checkout">
+          <a className={styles['primary-button']}>Checkout</a>
         </Link>
       </div>
     </aside>

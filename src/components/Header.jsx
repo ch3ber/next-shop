@@ -11,6 +11,7 @@ import menu from '@icons/icon_menu.svg'
 import logo from '@logos/logo_yard_sale.svg'
 import shoppingCart from '@icons/icon_shopping_cart.svg'
 import styles from '@styles/Header.module.scss'
+import Link from 'next/link'
 
 export const Header = () => {
   const [toggle, setToggle] = useState(false)
@@ -25,40 +26,48 @@ export const Header = () => {
     <nav className={styles.Nav}>
       <Image priority src={menu} alt="menu" className={styles.menu} />
       <div className={styles['navbar-left']}>
-        <Image priority src={logo} alt="logo" className={styles['nav-logo']} />
+        <Link href="/">
+          <Image priority src={logo} alt="logo" className={styles['nav-logo']} />
+        </Link>
 
         <ul>
           <li>
-            <a href="/">All</a>
+            <Link href="/">All</Link>
           </li>
           <li>
-            <a href="/">Clothes</a>
+            <Link href="/">Clothes</Link>
           </li>
           <li>
-            <a href="/">Electronics</a>
+            <Link href="/">Electronics</Link>
           </li>
           <li>
-            <a href="/">Furnitures</a>
+            <Link href="/">Furnitures</Link>
           </li>
           <li>
-            <a href="/">Toys</a>
+            <Link href="/">Toys</Link>
           </li>
           <li>
-            <a href="/">Others</a>
+            <Link href="/">Others</Link>
           </li>
         </ul>
       </div>
 
       <div className={styles['navbar-right']}>
         <ul>
-          <li className={styles['navbar-email']} onClick={handleToggle}>
-            platzi@example.com
+          <li className={styles['navbar-email']}>
+            <button
+              className={(styles['Header-button'], styles['Header-user-name'])}
+              onClick={handleToggle}>
+              platzi@example.com
+            </button>
           </li>
-          <li
-            className={styles['navbar-shopping-cart']}
-            onClick={() => setToggleOrders(!toggleOrders)}>
-            <Image src={shoppingCart} alt="shopping cart" />
-            {getAllCountProducts() > 0 && <div>{getAllCountProducts()}</div>}
+          <li className={styles['navbar-shopping-cart']}>
+            <button
+              className={styles['Header-button']}
+              onClick={() => setToggleOrders(!toggleOrders)}>
+              <Image src={shoppingCart} alt="shopping cart" />
+              {getAllCountProducts() > 0 && <div>{getAllCountProducts()}</div>}
+            </button>
           </li>
         </ul>
       </div>

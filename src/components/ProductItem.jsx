@@ -30,9 +30,13 @@ export const ProductItem = ({ product }) => {
           <p>${product.price}</p>
           <p>{product.title}</p>
         </div>
-        <figure onClick={() => handleClick(product)}>
-          <Image src={buttonImage} alt="shopping cart" />
-        </figure>
+        <button
+          className={styles['ProductItem-button']}
+          onClick={() => handleClick(product)}>
+          <figure>
+            <Image src={buttonImage} alt="shopping cart" />
+          </figure>
+        </button>
       </div>
     </div>
   )
