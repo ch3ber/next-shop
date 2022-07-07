@@ -16,17 +16,31 @@ function MyApp({ Component, pageProps }) {
   return (
     <AppContext.Provider value={initialState}>
       <Head>
-        <link rel="dns-prefetch" href="https://api.escuelajs.co/api/v1/products" />
-        <link
-          crossOrigin
-          rel="preconnect"
-          href="https://api.escuelajs.co/api/v1/products"
+        <meta charSet="utf-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
         />
         <title>Next Shop</title>
         <meta
           name="description"
           content="Shopping web page, this page is only to test Next.js and its functionalities"
         />
+
+        <link rel="dns-prefetch" href="https://api.escuelajs.co/api/v1/products" />
+        <link
+          crossOrigin
+          rel="preconnect"
+          href="https://api.escuelajs.co/api/v1/products"
+        />
+
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link crossOrigin rel="preconnect" href="https://www.googletagmanager.com" />
+
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#ffffff" />
+        <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       <Script
         async
@@ -44,6 +58,7 @@ function MyApp({ Component, pageProps }) {
         `,
         }}
       />
+
       <Header />
       <Component {...pageProps} />
     </AppContext.Provider>

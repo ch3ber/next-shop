@@ -1,5 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const withPWA = require('next-pwa')
+const runtimeCaching = require('next-pwa/cache')
+
+module.exports = withPWA({
+  pwa: {
+    dest: 'public',
+    runtimeCaching,
+    mode: 'production',
+  },
   reactStrictMode: true,
   images: {
     domains: [
@@ -11,6 +19,4 @@ const nextConfig = {
       'cdn.lorem.space',
     ],
   },
-}
-
-module.exports = nextConfig
+})
