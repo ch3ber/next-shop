@@ -10,6 +10,8 @@
   display: none;
 }
 .nav-logo {
+  display: grid;
+  place-content: center;
   width: 100px;
 }
 .navbar-left ul,
@@ -79,7 +81,8 @@
 }
 @media (max-width: 640px) {
   .menu {
-    display: block;
+    display: grid;
+    place-content: center;
   }
   .navbar-left ul {
     display: none;

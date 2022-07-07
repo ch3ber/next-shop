@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 
 // components
@@ -11,7 +12,6 @@ import menu from '@icons/icon_menu.svg'
 import logo from '@logos/logo_yard_sale.svg'
 import shoppingCart from '@icons/icon_shopping_cart.svg'
 import styles from '@styles/Header.module.scss'
-import Link from 'next/link'
 
 export const Header = () => {
   const [toggle, setToggle] = useState(false)
@@ -24,10 +24,14 @@ export const Header = () => {
 
   return (
     <nav className={styles.Nav}>
-      <Image priority src={menu} alt="menu" className={styles.menu} />
+      <div className={styles.menu}>
+        <Image src={menu} alt="menu" />
+      </div>
       <div className={styles['navbar-left']}>
         <Link href="/">
-          <Image priority src={logo} alt="logo" className={styles['nav-logo']} />
+          <div className={styles['nav-logo']}>
+            <Image priority src={logo} alt="logo" />
+          </div>
         </Link>
 
         <ul>
