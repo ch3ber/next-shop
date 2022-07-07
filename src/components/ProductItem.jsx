@@ -34,7 +34,7 @@ export const ProductItem = ({ product }) => {
           className={styles['ProductItem-button']}
           onClick={() => handleClick(product)}>
           <figure>
-            <Image src={buttonImage} alt="shopping cart" />
+            <Image src={buttonImage} alt="shopping cart" width={33} height={33} />
           </figure>
         </button>
       </div>

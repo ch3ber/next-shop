@@ -16,7 +16,17 @@ function MyApp({ Component, pageProps }) {
   return (
     <AppContext.Provider value={initialState}>
       <Head>
+        <link rel="dns-prefetch" href="https://api.escuelajs.co/api/v1/products" />
+        <link
+          crossOrigin
+          rel="preconnect"
+          href="https://api.escuelajs.co/api/v1/products"
+        />
         <title>Next Shop</title>
+        <meta
+          name="description"
+          content="Shopping web page, this page is only to test Next.js and its functionalities"
+        />
       </Head>
       <Script
         async

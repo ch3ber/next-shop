@@ -25,12 +25,12 @@ export const Header = () => {
   return (
     <nav className={styles.Nav}>
       <div className={styles.menu}>
-        <Image src={menu} alt="menu" />
+        <Image src={menu} alt="menu" width={25} height={21} />
       </div>
       <div className={styles['navbar-left']}>
         <Link href="/">
           <div className={styles['nav-logo']}>
-            <Image priority src={logo} alt="logo" />
+            <Image src={logo} alt="logo" width={97} height={20} priority />
           </div>
         </Link>
 
@@ -69,7 +69,13 @@ export const Header = () => {
             <button
               className={styles['Header-button']}
               onClick={() => setToggleOrders(!toggleOrders)}>
-              <Image src={shoppingCart} alt="shopping cart" />
+              <Image
+                src={shoppingCart}
+                alt="shopping cart"
+                width={24}
+                height={25}
+                priority
+              />
               {getAllCountProducts() > 0 && <div>{getAllCountProducts()}</div>}
             </button>
           </li>
